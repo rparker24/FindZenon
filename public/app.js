@@ -11,6 +11,14 @@ $(document).ready(function() {
     $('#total-checkins').html(data.checkin_count);
   });
 
+  $.getJSON("/history", function(historyData) {
+    console.log(historyData);
+
+    for (i = 0; i < historyData.length; i++) {
+      $('#history-list').append("<p>" + historyData[i] + "</p>");
+    }
+  });
+
 
 
   // add route to find unique values of last 10(?) checkins to display

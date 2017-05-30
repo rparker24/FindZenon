@@ -26,7 +26,7 @@ var Sighting = require('./models/Sighting');
 
 var oauth_token = token.key;
 
-var queryURL = "https://api.foursquare.com/v2/users/1244852?oauth_token=" + token + "&v=20170529";
+var queryURL = "https://api.foursquare.com/v2/users/1244852?oauth_token=" + oauth_token + "&v=20170529";
 
 request(queryURL, function(error, response, body) {
   if (!error && response.statusCode == 200) {
@@ -79,6 +79,18 @@ app.get('/sightings', function(req, res) {
     });
 });
 
+app.get('/history', function(req, res) {
+
+  Sighting.find({})
+    .distinct('checkin_time', {})
+    .exec(function(err, docs) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(docs);
+      }
+    });
+});
 
 var PORT = 3003;
 

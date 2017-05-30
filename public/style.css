@@ -1,3 +1,7 @@
-.location-data, .number-of-checkins {
-  float: left;
+body {
+  text-align: center;
 }
+
+/*.location-data, .number-of-checkins {
+  float: left;
+}*/
