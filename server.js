@@ -63,10 +63,18 @@ app.get('/', function(req, res) {
 });
 
 // check and remove dups in db when also finding record to display
+app.get('/sightings', function(req, res) {
 
-
-
-
+  Sighting.findOne({})
+    .sort({ created_at: -1 })
+    .exec(function(err, doc) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(doc);
+      }
+    });
+});
 
 
 var PORT = 3003;
