@@ -1,0 +1,25 @@
+{
+  "name": "findzenon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rparker24/FindZenon.git"
+  },
+  "author": "Robert M. Parker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rparker24/FindZenon/issues"
+  },
+  "homepage": "https://github.com/rparker24/FindZenon#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "moment": "^2.18.1",
+    "request": "^2.81.0"
+  }
+}
