@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $.getJSON("/sightings", function(data) {
-    console.log('dataype: ', typeof(data));
     console.log(data);
 
     // add array of headers that randomizes on each page load

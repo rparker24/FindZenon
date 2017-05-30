@@ -3,6 +3,7 @@ var app = express();
 var request = require('request');
 var moment = require('moment');
 var mongoose = require('mongoose');
+var token = require('./key.js');
 var bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({
@@ -23,7 +24,9 @@ db.once('open', function() {
 
 var Sighting = require('./models/Sighting');
 
-var queryURL = "https://api.foursquare.com/v2/users/1244852?oauth_token=ESCJCO5KCZJBIKX0PUVHGVQL3YZK4MIMCOWXZTKKNDGNCJOU&v=20170529";
+var oauth_token = token.key;
+
+var queryURL = "https://api.foursquare.com/v2/users/1244852?oauth_token=" + token + "&v=20170529";
 
 request(queryURL, function(error, response, body) {
   if (!error && response.statusCode == 200) {
